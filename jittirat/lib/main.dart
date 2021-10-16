@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
       title: 'Jittirat',
       theme: ThemeData(
         primarySwatch: Colors.pink,
+        scaffoldBackgroundColor: Colors.pink[50],
       ),
       home: App(),
     );
