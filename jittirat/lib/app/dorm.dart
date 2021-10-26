@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jittirat/app/options/rooms.dart';
 
 class Dorm extends StatefulWidget {
   @override
@@ -19,14 +20,14 @@ class _DormState extends State<Dorm> {
               children: [
                 overdue(),
                 Padding(padding: EdgeInsets.all(5)),
-                overdue3(),
+                emptyRooms(),
               ],
             ),
             Column(
               children: [
-                overdue2(),
+                electronic(),
                 Padding(padding: EdgeInsets.all(5)),
-                overdue4(),
+                allRooms(),
               ],
             )
           ],
@@ -43,7 +44,7 @@ class _DormState extends State<Dorm> {
     );
   }
 
-  SizedBox overdue2() {
+  SizedBox emptyRooms() {
     return SizedBox(
       height: 200,
       width: 200,
@@ -52,7 +53,7 @@ class _DormState extends State<Dorm> {
     );
   }
 
-  SizedBox overdue3() {
+  SizedBox electronic() {
     return SizedBox(
       height: 200,
       width: 200,
@@ -61,12 +62,17 @@ class _DormState extends State<Dorm> {
     );
   }
 
-  SizedBox overdue4() {
+  SizedBox allRooms() {
     return SizedBox(
       height: 200,
       width: 200,
-      child:
-          new ElevatedButton(onPressed: () {}, child: new Text("ห้องทั้งหมด")),
+      child: new ElevatedButton(
+          onPressed: () {
+            MaterialPageRoute materialPageRoute =
+                MaterialPageRoute(builder: (BuildContext context) => Rooms());
+            Navigator.of(context).push(materialPageRoute);
+          },
+          child: new Text("ห้องทั้งหมด")),
     );
   }
 }

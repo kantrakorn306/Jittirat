@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:jittirat/app/Noti.dart';
 import 'package:jittirat/app/Dashboard.dart';
 import 'package:jittirat/app/Dorm.dart';
-import 'package:jittirat/app/Home.dart';
 
 void main() {
   runApp(MyApp());
@@ -34,7 +33,6 @@ class _AppState extends State<App> {
   final List<Widget> _children = [
     Dashboard(),
     Dorm(),
-    Home(),
     Noti(),
   ];
 
@@ -49,31 +47,25 @@ class _AppState extends State<App> {
     return new Scaffold(
       body: _children[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.pinkAccent,
         onTap: onTappedBar,
         currentIndex: _currentIndex,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.insert_chart),
             label: 'Dashboard',
-            backgroundColor: Colors.pink,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.domain),
             label: 'Dormitory',
-            backgroundColor: Colors.green,
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'home',
-            backgroundColor: Colors.blue,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.mail),
             label: 'Notification',
-            backgroundColor: Colors.red,
           ),
         ],
         selectedItemColor: Colors.amber[800],
+        unselectedItemColor: Colors.white,
       ),
     );
   }
