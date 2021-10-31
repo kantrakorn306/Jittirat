@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:jittirat/app/options/rooms.dart';
+import 'package:jittirat/app/options/Empty.dart';
+import 'package:jittirat/app/options/overdueRooms.dart';
 
 class Dorm extends StatefulWidget {
   @override
@@ -20,7 +22,7 @@ class _DormState extends State<Dorm> {
               children: [
                 overdue(),
                 Padding(padding: EdgeInsets.all(5)),
-                emptyRooms(),
+                emptyRoom(),
               ],
             ),
             Column(
@@ -36,24 +38,35 @@ class _DormState extends State<Dorm> {
     );
   }
 
-  SizedBox overdue() {
+  overdue() {
     return SizedBox(
       height: 200,
       width: 200,
-      child: new ElevatedButton(onPressed: () {}, child: new Text("ค้างชำระ")),
+      child: new ElevatedButton(
+          onPressed: () {
+            MaterialPageRoute materialPageRoute = MaterialPageRoute(
+                builder: (BuildContext context) => overdueRooms());
+            Navigator.of(context).push(materialPageRoute);
+          },
+          child: new Text("ค้างชำระ")),
     );
   }
 
-  SizedBox emptyRooms() {
+  emptyRoom() {
     return SizedBox(
       height: 200,
       width: 200,
-      child:
-          new ElevatedButton(onPressed: () {}, child: new Text("ห้องที่ว่าง")),
+      child: new ElevatedButton(
+          onPressed: () {
+            MaterialPageRoute materialPageRoute = MaterialPageRoute(
+                builder: (BuildContext context) => emptyRooms());
+            Navigator.of(context).push(materialPageRoute);
+          },
+          child: new Text("ห้องที่ว่าง")),
     );
   }
 
-  SizedBox electronic() {
+  electronic() {
     return SizedBox(
       height: 200,
       width: 200,
@@ -62,7 +75,7 @@ class _DormState extends State<Dorm> {
     );
   }
 
-  SizedBox allRooms() {
+  allRooms() {
     return SizedBox(
       height: 200,
       width: 200,

@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:jittirat/app/options/form/roomForm.dart';
+import 'package:jittirat/app/options/form/overdueForm.dart';
 
-class Rooms extends StatefulWidget {
+class overdueRooms extends StatefulWidget {
   @override
-  _RoomsState createState() => _RoomsState();
+  _overdueRoomsState createState() => _overdueRoomsState();
 }
 
-class _RoomsState extends State<Rooms> {
+class _overdueRoomsState extends State<overdueRooms> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: new AppBar(title: new Text("ห้องทั้งหมด")),
+      appBar: new AppBar(title: new Text("ห้องที่ค้างค่าชำระ")),
       body: new Container(
         margin: EdgeInsets.all(15),
         child: Row(
@@ -28,7 +28,7 @@ class _RoomsState extends State<Rooms> {
       child: new ElevatedButton(
           onPressed: () {
             MaterialPageRoute materialPageRoute = MaterialPageRoute(
-                builder: (BuildContext context) => roomForm());
+                builder: (BuildContext context) => overdueForm());
             Navigator.of(context).push(materialPageRoute);
           },
           child: new Text("A101")),

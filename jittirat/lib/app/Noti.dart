@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jittirat/app/options/form/payRentForm.dart';
 
 class Noti extends StatefulWidget {
   @override
@@ -17,16 +18,26 @@ class _NotiState extends State<Noti> {
           children: [
             Column(
               children: [
-                overdue(),
+                SizedBox(
+                  height: 200,
+                  width: 200,
+                  child: new ElevatedButton(
+                      onPressed: () {
+                        MaterialPageRoute materialPageRoute = MaterialPageRoute(
+                            builder: (BuildContext context) => payRentForm());
+                        Navigator.of(context).push(materialPageRoute);
+                      },
+                      child: new Text("ค้างชำระ")),
+                ),
                 Padding(padding: EdgeInsets.all(5)),
-                overdue3(),
+                electronic(),
               ],
             ),
             Column(
               children: [
-                overdue2(),
+                broken(),
                 Padding(padding: EdgeInsets.all(5)),
-                overdue4(),
+                etc(),
               ],
             )
           ],
@@ -36,15 +47,7 @@ class _NotiState extends State<Noti> {
   }
 }
 
-SizedBox overdue() {
-  return SizedBox(
-    height: 200,
-    width: 200,
-    child: new ElevatedButton(onPressed: () {}, child: new Text("ชำระค่าเช่า")),
-  );
-}
-
-SizedBox overdue2() {
+SizedBox electronic() {
   return SizedBox(
     height: 200,
     width: 200,
@@ -53,7 +56,7 @@ SizedBox overdue2() {
   );
 }
 
-SizedBox overdue3() {
+SizedBox broken() {
   return SizedBox(
     height: 200,
     width: 200,
@@ -62,7 +65,7 @@ SizedBox overdue3() {
   );
 }
 
-SizedBox overdue4() {
+SizedBox etc() {
   return SizedBox(
     height: 200,
     width: 200,
