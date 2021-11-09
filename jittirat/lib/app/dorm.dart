@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:Jittirat/app/options/rooms.dart';
-import 'package:Jittirat/app/options/Empty.dart';
-import 'package:Jittirat/app/options/Electronic.dart';
-import 'package:Jittirat/app/options/overdueRooms.dart';
+import 'package:Jittirat/app/optionsDorm/rooms.dart';
+import 'package:Jittirat/app/optionsDorm/Empty.dart';
+import 'package:Jittirat/app/optionsDorm/Electronic.dart';
+import 'package:Jittirat/app/optionsDorm/overdueRooms.dart';
 
 class Dorm extends StatefulWidget {
   @override
@@ -10,35 +10,6 @@ class Dorm extends StatefulWidget {
 }
 
 class _DormState extends State<Dorm> {
-  @override
-  Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(title: new Text("Dormitory")),
-      body: new Container(
-        margin: EdgeInsets.all(5),
-        child: (Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            Column(
-              children: [
-                overdue(),
-                Padding(padding: EdgeInsets.all(5)),
-                emptyRoom(),
-              ],
-            ),
-            Column(
-              children: [
-                electronic(),
-                Padding(padding: EdgeInsets.all(5)),
-                allRooms(),
-              ],
-            )
-          ],
-        )),
-      ),
-    );
-  }
-
   overdue() {
     return SizedBox(
       height: 200,
@@ -92,6 +63,35 @@ class _DormState extends State<Dorm> {
             Navigator.of(context).push(materialPageRoute);
           },
           child: new Text("ห้องทั้งหมด")),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return new Scaffold(
+      appBar: new AppBar(title: new Text("Dormitory")),
+      body: new Container(
+        margin: EdgeInsets.all(5),
+        child: (Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            Column(
+              children: [
+                overdue(),
+                Padding(padding: EdgeInsets.all(5)),
+                emptyRoom(),
+              ],
+            ),
+            Column(
+              children: [
+                electronic(),
+                Padding(padding: EdgeInsets.all(5)),
+                allRooms(),
+              ],
+            )
+          ],
+        )),
+      ),
     );
   }
 }

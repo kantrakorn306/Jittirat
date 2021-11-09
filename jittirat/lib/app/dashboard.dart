@@ -6,6 +6,22 @@ class Dashboard extends StatefulWidget {
 }
 
 class _DashboardState extends State<Dashboard> {
+  overdue() {
+    return SizedBox(
+      height: 200,
+      width: 400,
+      child: new ElevatedButton(onPressed: () {}, child: new Text("รายได้")),
+    );
+  }
+
+  overdue3() {
+    return SizedBox(
+      height: 400,
+      width: 400,
+      child: new ElevatedButton(onPressed: () {}, child: new Text("ค่าไฟฟ้า")),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -27,20 +43,4 @@ class _DashboardState extends State<Dashboard> {
       ),
     );
   }
-}
-
-SizedBox overdue() {
-  return SizedBox(
-    height: 200,
-    width: 400,
-    child: new ElevatedButton(onPressed: () {}, child: new Text("รายได้")),
-  );
-}
-
-SizedBox overdue3() {
-  return SizedBox(
-    height: 400,
-    width: 400,
-    child: new ElevatedButton(onPressed: () {}, child: new Text("ค่าไฟฟ้า")),
-  );
 }

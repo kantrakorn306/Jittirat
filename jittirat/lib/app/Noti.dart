@@ -1,5 +1,8 @@
+import 'package:Jittirat/app/optionsNoti/brokenNoti.dart';
+import 'package:Jittirat/app/optionsNoti/electroNoti.dart';
+import 'package:Jittirat/app/optionsNoti/etc.dart';
+import 'package:Jittirat/app/optionsNoti/payNoti.dart';
 import 'package:flutter/material.dart';
-import 'package:Jittirat/app/form/payRentForm.dart';
 
 class Noti extends StatefulWidget {
   @override
@@ -12,7 +15,12 @@ class _NotiState extends State<Noti> {
       height: 200,
       width: 200,
       child: new ElevatedButton(
-          onPressed: () {}, child: new Text("แจ้งเช่าเครื่องใช้ไฟ้ฟ้า")),
+          onPressed: () {
+            MaterialPageRoute materialPageRoute = MaterialPageRoute(
+                builder: (BuildContext context) => electroNoti());
+            Navigator.of(context).push(materialPageRoute);
+          },
+          child: new Text("แจ้งเช่าเครื่องใช้ไฟฟ้า")),
     );
   }
 
@@ -20,16 +28,27 @@ class _NotiState extends State<Noti> {
     return SizedBox(
       height: 200,
       width: 200,
-      child:
-          new ElevatedButton(onPressed: () {}, child: new Text("แจ้งของชำรุด")),
+      child: new ElevatedButton(
+          onPressed: () {
+            MaterialPageRoute materialPageRoute = MaterialPageRoute(
+                builder: (BuildContext context) => brokenNoti());
+            Navigator.of(context).push(materialPageRoute);
+          },
+          child: new Text("แจ้งของชำรุด")),
     );
   }
 
-  etc() {
+  Etc() {
     return SizedBox(
       height: 200,
       width: 200,
-      child: new ElevatedButton(onPressed: () {}, child: new Text("อื่นๆ")),
+      child: new ElevatedButton(
+          onPressed: () {
+            MaterialPageRoute materialPageRoute =
+                MaterialPageRoute(builder: (BuildContext context) => etc());
+            Navigator.of(context).push(materialPageRoute);
+          },
+          child: new Text("อื่นๆ")),
     );
   }
 
@@ -40,10 +59,10 @@ class _NotiState extends State<Noti> {
         child: new ElevatedButton(
             onPressed: () {
               MaterialPageRoute materialPageRoute = MaterialPageRoute(
-                  builder: (BuildContext context) => payRentForm());
+                  builder: (BuildContext context) => payNoti());
               Navigator.of(context).push(materialPageRoute);
             },
-            child: new Text("ค้างชำระ")));
+            child: new Text("ชำระค่าเช่า")));
   }
 
   @override
@@ -66,7 +85,7 @@ class _NotiState extends State<Noti> {
               children: [
                 notiBroken(),
                 Padding(padding: EdgeInsets.all(5)),
-                etc(),
+                Etc(),
               ],
             )
           ],

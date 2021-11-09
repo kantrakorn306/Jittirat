@@ -44,11 +44,10 @@ class _AppState extends State<App> {
 
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
+    return Scaffold(
       body: _children[_currentIndex],
       bottomNavigationBar: Container(
         child: BottomNavigationBar(
-          elevation: 10,
           items: [
             BottomNavigationBarItem(
               icon: Icon(Icons.insert_chart),
@@ -64,6 +63,7 @@ class _AppState extends State<App> {
             ),
           ],
           selectedItemColor: Colors.limeAccent,
+          selectedLabelStyle: TextStyle(fontSize: 15),
           unselectedItemColor: Colors.white,
           backgroundColor: Colors.pink,
           onTap: onTappedBar,
