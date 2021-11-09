@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:Jittirat/app/options/rooms.dart';
 import 'package:Jittirat/app/options/Empty.dart';
+import 'package:Jittirat/app/options/Electronic.dart';
 import 'package:Jittirat/app/options/overdueRooms.dart';
 
 class Dorm extends StatefulWidget {
@@ -71,7 +72,12 @@ class _DormState extends State<Dorm> {
       height: 200,
       width: 200,
       child: new ElevatedButton(
-          onPressed: () {}, child: new Text("เครื่องใช้ไฟฟ้า")),
+          onPressed: () {
+            MaterialPageRoute materialPageRoute = MaterialPageRoute(
+                builder: (BuildContext context) => Electronic());
+            Navigator.of(context).push(materialPageRoute);
+          },
+          child: new Text("เครื่องใช้ไฟฟ้า")),
     );
   }
 

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:Jittirat/app/options/form/payRentForm.dart';
+import 'package:Jittirat/app/form/payRentForm.dart';
 
 class Noti extends StatefulWidget {
   @override
@@ -7,6 +7,45 @@ class Noti extends StatefulWidget {
 }
 
 class _NotiState extends State<Noti> {
+  notiElectronic() {
+    return SizedBox(
+      height: 200,
+      width: 200,
+      child: new ElevatedButton(
+          onPressed: () {}, child: new Text("แจ้งเช่าเครื่องใช้ไฟ้ฟ้า")),
+    );
+  }
+
+  notiBroken() {
+    return SizedBox(
+      height: 200,
+      width: 200,
+      child:
+          new ElevatedButton(onPressed: () {}, child: new Text("แจ้งของชำรุด")),
+    );
+  }
+
+  etc() {
+    return SizedBox(
+      height: 200,
+      width: 200,
+      child: new ElevatedButton(onPressed: () {}, child: new Text("อื่นๆ")),
+    );
+  }
+
+  notiOverdue() {
+    return SizedBox(
+        height: 200,
+        width: 200,
+        child: new ElevatedButton(
+            onPressed: () {
+              MaterialPageRoute materialPageRoute = MaterialPageRoute(
+                  builder: (BuildContext context) => payRentForm());
+              Navigator.of(context).push(materialPageRoute);
+            },
+            child: new Text("ค้างชำระ")));
+  }
+
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -18,24 +57,14 @@ class _NotiState extends State<Noti> {
           children: [
             Column(
               children: [
-                SizedBox(
-                  height: 200,
-                  width: 200,
-                  child: new ElevatedButton(
-                      onPressed: () {
-                        MaterialPageRoute materialPageRoute = MaterialPageRoute(
-                            builder: (BuildContext context) => payRentForm());
-                        Navigator.of(context).push(materialPageRoute);
-                      },
-                      child: new Text("ค้างชำระ")),
-                ),
+                notiOverdue(),
                 Padding(padding: EdgeInsets.all(5)),
-                electronic(),
+                notiElectronic(),
               ],
             ),
             Column(
               children: [
-                broken(),
+                notiBroken(),
                 Padding(padding: EdgeInsets.all(5)),
                 etc(),
               ],
@@ -45,30 +74,4 @@ class _NotiState extends State<Noti> {
       ),
     );
   }
-}
-
-SizedBox electronic() {
-  return SizedBox(
-    height: 200,
-    width: 200,
-    child: new ElevatedButton(
-        onPressed: () {}, child: new Text("แจ้งเช่าเครื่องใช้ไฟ้ฟ้า")),
-  );
-}
-
-SizedBox broken() {
-  return SizedBox(
-    height: 200,
-    width: 200,
-    child:
-        new ElevatedButton(onPressed: () {}, child: new Text("แจ้งของชำรุด")),
-  );
-}
-
-SizedBox etc() {
-  return SizedBox(
-    height: 200,
-    width: 200,
-    child: new ElevatedButton(onPressed: () {}, child: new Text("อื่นๆ")),
-  );
 }
