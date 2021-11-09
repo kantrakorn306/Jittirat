@@ -46,26 +46,29 @@ class _AppState extends State<App> {
   Widget build(BuildContext context) {
     return new Scaffold(
       body: _children[_currentIndex],
-      bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.pinkAccent,
-        onTap: onTappedBar,
-        currentIndex: _currentIndex,
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.insert_chart),
-            label: 'Dashboard',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.domain),
-            label: 'Dormitory',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.mail),
-            label: 'Notification',
-          ),
-        ],
-        selectedItemColor: Colors.amber[800],
-        unselectedItemColor: Colors.white,
+      bottomNavigationBar: Container(
+        child: BottomNavigationBar(
+          elevation: 10,
+          items: [
+            BottomNavigationBarItem(
+              icon: Icon(Icons.insert_chart),
+              label: 'Dashboard',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.domain),
+              label: 'Dormitory',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.mail),
+              label: 'Notification',
+            ),
+          ],
+          selectedItemColor: Colors.limeAccent,
+          unselectedItemColor: Colors.white,
+          backgroundColor: Colors.pink,
+          onTap: onTappedBar,
+          currentIndex: _currentIndex,
+        ),
       ),
     );
   }

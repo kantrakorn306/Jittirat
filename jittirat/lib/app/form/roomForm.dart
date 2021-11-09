@@ -13,10 +13,12 @@ class _roomFormState extends State<roomForm> {
         title: new Text('A101'),
       ),
       body: new Container(
+        width: 300,
+        height: 400,
         child: Card(
           child: Column(
             mainAxisSize: MainAxisSize.min,
-            children: <Widget>[nameForm(), phoneForm(), lineForm(), submit()],
+            children: [nameForm(), phoneForm(), lineForm(), submit()],
           ),
         ),
       ),
