@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:jittirat/app/Noti.dart';
-import 'package:jittirat/app/Dashboard.dart';
-import 'package:jittirat/app/Dorm.dart';
+import 'package:Jittirat/app/Noti.dart';
+import 'package:Jittirat/app/Dashboard.dart';
+import 'package:Jittirat/app/Dorm.dart';
 
 void main() {
   runApp(MyApp());

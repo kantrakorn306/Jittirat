@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:jittirat/app/options/form/payRentForm.dart';
+import 'package:Jittirat/app/options/form/payRentForm.dart';
 
 class Noti extends StatefulWidget {
   @override
