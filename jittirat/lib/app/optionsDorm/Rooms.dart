@@ -10,6 +10,7 @@ class _RoomsState extends State<Rooms> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: new AppBar(title: new Text("ห้องทั้งหมด")),
+      backgroundColor: Colors.pink[200],
       body: new Container(
         margin: EdgeInsets.all(15),
         child: Column(

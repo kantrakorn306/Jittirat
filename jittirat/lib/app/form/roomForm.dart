@@ -12,6 +12,7 @@ class _roomFormState extends State<roomForm> {
       appBar: new AppBar(
         title: new Text('A101'),
       ),
+      backgroundColor: Colors.pink[200],
       body: new Container(
         width: 300,
         height: 400,

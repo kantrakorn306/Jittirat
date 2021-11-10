@@ -1,3 +1,4 @@
+import 'package:Jittirat/app/form/notiForm.dart';
 import 'package:flutter/material.dart';
 
 class etc extends StatefulWidget {
@@ -10,6 +11,7 @@ class _etcState extends State<etc> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: new AppBar(title: new Text("อื่นๆ")),
+      backgroundColor: Colors.pink[200],
       body: new Container(
         margin: EdgeInsets.all(15),
         child: Column(
@@ -35,7 +37,13 @@ class _etcState extends State<etc> {
       child: SizedBox(
         height: 50,
         width: 100,
-        child: new ElevatedButton(onPressed: () {}, child: new Text("A101")),
+        child: new ElevatedButton(
+            onPressed: () {
+              MaterialPageRoute materialPageRoute = MaterialPageRoute(
+                  builder: (BuildContext context) => notiForm());
+              Navigator.of(context).push(materialPageRoute);
+            },
+            child: new Text("A101")),
       ),
     );
   }

@@ -11,6 +11,7 @@ class _overdueRoomsState extends State<overdueRooms> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: new AppBar(title: new Text("ห้องที่ค้างค่าชำระ")),
+      backgroundColor: Colors.pink[200],
       body: new Container(
         margin: EdgeInsets.all(15),
         child: Column(

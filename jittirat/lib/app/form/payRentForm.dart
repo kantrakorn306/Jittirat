@@ -40,6 +40,7 @@ class _payRentFormState extends State<payRentForm> {
       appBar: new AppBar(
         title: new Text('A101'),
       ),
+      backgroundColor: Colors.pink[200],
       body: new Container(
         child: Column(
           children: [

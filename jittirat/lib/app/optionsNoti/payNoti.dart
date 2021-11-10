@@ -11,6 +11,7 @@ class _payNotiState extends State<payNoti> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: new AppBar(title: new Text("ชำระค่าเช่า")),
+      backgroundColor: Colors.pink[200],
       body: new Container(
         margin: EdgeInsets.all(15),
         child: Column(

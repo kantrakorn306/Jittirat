@@ -11,6 +11,7 @@ class _emptyRoomsState extends State<emptyRooms> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: new AppBar(title: new Text("ห้องที่ว่างทั้งหมด")),
+      backgroundColor: Colors.pink[200],
       body: new Container(
         margin: EdgeInsets.all(15),
         child: Column(

@@ -69,6 +69,7 @@ class _NotiState extends State<Noti> {
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(title: new Text("Notification")),
+      backgroundColor: Colors.pink[200],
       body: new Container(
         margin: EdgeInsets.all(5),
         child: (Row(
